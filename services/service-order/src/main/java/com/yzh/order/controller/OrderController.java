@@ -13,8 +13,8 @@ public class OrderController {
     private OrderService orderService;
     //创建订单
     @GetMapping("/create")
-    public Order createOrder(@RequestParam("userId") Long userId,
-                             @RequestParam("productId") Long productId){
+    public Order createOrder(@RequestParam("productId") Long productId,
+                             @RequestParam("userId") Long userId){
         Order order = orderService.createOrder(productId,userId);
         return order;
     }

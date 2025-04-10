@@ -1,5 +1,6 @@
 package com.yzh.order.bean;
 
+import com.yzh.product.bean.Product;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -12,7 +13,7 @@ public class Order {
     private Long userId;
     private String nickName;
     private String address;
-    private List<Object>productList;
+    private List<Product>productList;
 
 
 
