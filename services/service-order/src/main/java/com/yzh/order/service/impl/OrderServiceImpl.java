@@ -40,7 +40,6 @@ public class OrderServiceImpl implements OrderService {
         Order order = new Order();
         order.setId(1L);
         // 总金额
-        // 总金额
         order.setTotalAmount(product.getPrice().multiply(new BigDecimal(product.getNum())));
         order.setUserId(userId);
         order.setAddress("尚硅谷");
@@ -48,6 +47,13 @@ public class OrderServiceImpl implements OrderService {
         order.setProductList(Arrays.asList(product));
         order.setNickName("张三");
         return order;
+        //
+//        try {
+//            SphU.entry("hahah");
+//
+//        } catch (BlockException e) {
+//            //编码处理
+//        }
 
     }
     //Sentinel兜底回调
