@@ -12,4 +12,7 @@ public class OrderProperties {
     String timeout;
 
     String autoConfirm;
+
+    String dbUrl;
+    
 }
