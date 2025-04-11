@@ -1,6 +1,7 @@
 package com.yzh.order.service.impl;
 
 import com.yzh.order.bean.Order;
+import com.yzh.order.feign.ProductFeignClient;
 import com.yzh.order.service.OrderService;
 import com.yzh.product.bean.Product;
 import lombok.extern.slf4j.Slf4j;
@@ -23,20 +24,24 @@ public class OrderServiceImpl implements OrderService {
     RestTemplate restTemplate;
     @Autowired //一定导入spring-cloud-starter-loadbalancer依赖
     LoadBalancerClient loadBalancerClient;
+    @Autowired
+    ProductFeignClient productFeignClient;
     @Override
     public Order createOrder(Long productId,Long userId){
 //      普通请求 Product product =  getProductFromRemote(productId);
 //      使用负载均衡请求  Product product =  getProductFromRemoteWithLoadBalancer(productId);
-        Product product =  getProductFromRemoteWithLoadBalanceAnnotation(productId); //基于注解的负载均衡
-
+ //       Product product =  getProductFromRemoteWithLoadBalanceAnnotation(productId); //基于注解的负载均衡
+        //使用Feign完成远程调用
+        Product product = productFeignClient.getProductById(productId);
         Order order = new Order();
         order.setId(1L);
         // 总金额
+        // 总金额
         order.setTotalAmount(product.getPrice().multiply(new BigDecimal(product.getNum())));
         order.setUserId(userId);
-        // 远程调用
+        order.setAddress("尚硅谷");
+        //远程查询商品列表
         order.setProductList(Arrays.asList(product));
-        order.setAddress("北京");
         order.setNickName("张三");
         return order;
 
