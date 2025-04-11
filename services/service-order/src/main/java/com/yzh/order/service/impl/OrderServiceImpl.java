@@ -1,5 +1,6 @@
 package com.yzh.order.service.impl;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.yzh.order.bean.Order;
 import com.yzh.order.feign.ProductFeignClient;
 import com.yzh.order.service.OrderService;
@@ -17,6 +18,7 @@ import java.util.Arrays;
 import java.util.List;
 @Slf4j
 @Service
+
 public class OrderServiceImpl implements OrderService {
     @Autowired
     DiscoveryClient discoveryClient;
@@ -26,6 +28,7 @@ public class OrderServiceImpl implements OrderService {
     LoadBalancerClient loadBalancerClient;
     @Autowired
     ProductFeignClient productFeignClient;
+    @SentinelResource(value = "createOrder",blockHandler = "createOrderFallback")
     @Override
     public Order createOrder(Long productId,Long userId){
 //      普通请求 Product product =  getProductFromRemote(productId);
