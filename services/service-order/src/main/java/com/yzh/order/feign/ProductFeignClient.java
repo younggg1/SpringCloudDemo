@@ -1,11 +1,12 @@
 package com.yzh.order.feign;
 
+import com.yzh.order.feign.fallback.ProductFeignClientFallback;
 import com.yzh.product.bean.Product;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(value = "service-product")
+@FeignClient(value = "service-product",fallback = ProductFeignClientFallback.class) // feign客户端
 public interface ProductFeignClient {
 
 
