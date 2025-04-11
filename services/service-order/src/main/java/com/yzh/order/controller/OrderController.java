@@ -59,6 +59,5 @@ public class OrderController {
     public String readDb(){
         log.info("readDb...");
         return "readDb success....";
-        
     }
 }
