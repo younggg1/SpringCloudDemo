@@ -1,6 +1,7 @@
 package com.yzh.order.service.impl;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.yzh.order.bean.Order;
 import com.yzh.order.feign.ProductFeignClient;
 import com.yzh.order.service.OrderService;
@@ -49,7 +50,17 @@ public class OrderServiceImpl implements OrderService {
         return order;
 
     }
+    //兜底回调
+    public Order createOrderFallback(Long productId, Long userId, BlockException e){
+        Order order = new Order();
+        order.setId(0L);
+        order.setTotalAmount(new BigDecimal("0"));
+        order.setUserId(userId);
+        order.setNickName("未知用户");
+        order.setAddress("异常信息："+e.getClass());
 
+        return order;
+    }
     private Product getProductFromRemote(Long productId){
         //1.获取商品服务所在的所有机器ip+port
         List<ServiceInstance> instances =  discoveryClient.getInstances("service-product");
