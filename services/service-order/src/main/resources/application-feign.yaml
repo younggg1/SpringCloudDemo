@@ -17,7 +17,7 @@ spring:
       eager: true
       web-context-unify: false
 #            request-interceptors:
-#              - com.atguigu.order.interceptor.XTokenRequestInterceptor
+#              - com.yzh.order.interceptor.XTokenRequestInterceptor
 #            retryer: feign.retryer.Default
 
 feign:
