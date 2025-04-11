@@ -15,7 +15,7 @@ spring:
       transport:
         dashboard: localhost:8080
       eager: true # 提前加载，项目一启动就连上sentinel控制台
-      web-context-unify: false
+      web-context-unify: false # 不使用统一上下文
 #            request-interceptors:
 #              - com.yzh.order.interceptor.XTokenRequestInterceptor
 #            retryer: feign.retryer.Default
