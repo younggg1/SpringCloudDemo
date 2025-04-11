@@ -50,7 +50,7 @@ public class OrderServiceImpl implements OrderService {
         return order;
 
     }
-    //兜底回调
+    //Sentinel兜底回调
     public Order createOrderFallback(Long productId, Long userId, BlockException e){
         Order order = new Order();
         order.setId(0L);
