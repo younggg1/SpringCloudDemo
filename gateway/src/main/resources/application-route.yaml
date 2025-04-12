@@ -9,16 +9,16 @@ spring:
             allowed-methods: '*'
 
       routes:
-#        - id: bing-route
-#          uri: https://cn.bing.com/
-#          predicates:
-#            - name: Path
-#              args:
-#                patterns: /search
-#            - name: Query
-#              args:
-#                param: q
-#                regexp: haha
+        - id: bing-route
+          uri: https://cn.bing.com/
+          predicates:
+            - name: Path
+              args:
+                patterns: /search
+            - name: Query
+              args:
+                param: q
+                regexp: haha
 #            #            - Vip=user,leifengyang
 #            - name: Vip
 #              args:
@@ -29,7 +29,7 @@ spring:
 #            hello: world
         - id: order-route
           uri: lb://service-order
-          predicates:
+          predicates:  #断言
             - name: Path
               args:
                 patterns: /api/order/**
