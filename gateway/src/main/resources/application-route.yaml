@@ -18,15 +18,14 @@ spring:
             - name: Query
               args:
                 param: q
-                regexp: haha
-#            #            - Vip=user,leifengyang
-#            - name: Vip
-#              args:
-#                param: user
-#                value: leifengyang
-#          order: 10
-#          metadata:
-#            hello: world
+#            - Vip=user,leifengyang
+            - name: Vip #自定义断言工厂完整写法
+              args:
+                param: user
+                value: leifengyang
+          order: 10
+          metadata:
+            hello: world
         - id: order-route
           uri: lb://service-order
           predicates:  #断言
