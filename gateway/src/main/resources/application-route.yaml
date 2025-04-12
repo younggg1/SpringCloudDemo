@@ -2,7 +2,7 @@ spring:
   cloud:
     gateway:
       globalcors:
-        cors-configurations:
+        cors-configurations: #全局跨域配置
           '[/**]':
             allowed-origin-patterns: '*'
             allowed-headers: '*'
