@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 //@RefreshScope
 @Slf4j
-@RequestMapping("/api/order")
+//@RequestMapping("/api/order")
 @RestController
 public class OrderController {
     @Autowired

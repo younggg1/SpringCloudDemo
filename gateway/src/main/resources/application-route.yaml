@@ -33,16 +33,16 @@ spring:
               args:
                 patterns: /api/order/**
                 matchTrailingSlash: true
-#          filters:
-#            - RewritePath=/api/order/?(?<segment>.*), /$\{segment}
+          filters: #过滤器
+            - RewritePath=/api/order/?(?<segment>.*), /$\{segment}
 #            - OnceToken=X-Response-Token, jwt
           order: 1
         - id: product-route
           uri: lb://service-product
           predicates:
             - Path=/api/product/**
-#          filters:
-#            - RewritePath=/api/product/?(?<segment>.*), /$\{segment}
+          filters: #过滤器
+            - RewritePath=/api/product/?(?<segment>.*), /$\{segment}
           order: 2
 #      default-filters:
 #        - AddResponseHeader=X-Response-Abc, 123
