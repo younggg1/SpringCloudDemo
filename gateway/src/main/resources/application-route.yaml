@@ -35,7 +35,7 @@ spring:
                 matchTrailingSlash: true
           filters: #过滤器
             - RewritePath=/api/order/?(?<segment>.*), /$\{segment}
-#            - AddResponseHeader=X-Response-Abc, 123
+            - OnceToken=X-Response-Token, jwt
           order: 1
         - id: product-route
           uri: lb://service-product
