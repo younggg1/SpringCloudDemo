@@ -5,8 +5,15 @@
 教程：b站尚硅谷2025最新SpringCloud教程，springcloud从入门到大牛  
 地址：https://www.bilibili.com/video/BV1UJc2ezEFU/?share_source=copy_web&vd_source=5b8eb08d3418718b8d124c928d3039ec
 ## 目标
-- 掌握 Spring Cloud 的核心组件（如 Nacos、Gateway、OpenFeign、Sentinel、Seata 等）。
-- 熟悉 Git 的基本操作（如 `add`、`commit`、`push`、`branch` 等）。
+- 掌握 Spring Cloud 的核心组件（如 Nacos、OpenFeign、Sentinel、Gateway、Seata 等）。
+- - [x] 学习 Markdown
+- - [x] 写 README
+- - [x] 学习Nacos服务注册/配置中心
+- - [x] 学习OpenFeign远程调用客户端
+- - [x] 学习Sentinel服务保护
+- - [x] 学习Gateway网关
+- - [x] 学习Seata分布式事务
+- 熟悉 Git 的基本操作（如 `add`、`commit`、`push`、`branch/checkout`、`remote`等）。
 - 编写清晰的代码和文档，提升开发能力。
 
 ## 内容
