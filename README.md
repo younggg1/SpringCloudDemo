@@ -23,4 +23,4 @@
 ## 使用说明
 1. 克隆仓库：
    ```bash
-   git clone https://github.com/younggg1/spring-cloud-study.git
+   git clone https://github.com/younggg1/SpringCloudDemo.git
